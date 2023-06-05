@@ -9,11 +9,26 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body onload="checkPassword()">
 
 <h1> HELLO THERE </h1>
 
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script>
+    function redirectedToIndex(){
+        window.location.href = "index.html";
+    }
+
+    function checkPassword(){
+        var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+        if(!isLoggedIn){
+            redirectedToIndex();
+        }
+    }
+
+</script>
+
 </body>
 </html>
