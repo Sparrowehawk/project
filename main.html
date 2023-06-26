@@ -1,34 +1,243 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <!-- Custom fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
     <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body onload="checkPassword()">
-
-<h1> HELLO THERE </h1>
-
-
-<script type="text/javascript" src="js/materialize.min.js"></script>
-
-<script>
-    function redirectedToIndex(){
-        window.location.href = "index.html";
-    }
-
-    function checkPassword(){
-        var isLoggedIn = sessionStorage.getItem("isLoggedIn");
-        if(!isLoggedIn){
-            redirectedToIndex();
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        html,
+        body,
+        .block {
+            height: 100%;
         }
-    }
+        
+        .block_filler {
+            height: 50%;
+            @media (max-width: 768px) {
+                height: 100%
+            }
+        }
+        
+        .pin-top {
+            position: relative;
+        }
+        
+        .pin-bottom {
+            position: relative;
+        }
+        
+        .pinned {
+            position: fixed !important;
+        }
+        
+        h1 {
+            color: aliceblue;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 600;
+        }
+        
+        p {
+            color: aliceblue;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 400;
+            text-align: center;
+            margin-top: relative;
+        }
+        
+        a {
+            color: aliceblue;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 400;
+            text-align: center;
+            margin-top: relative;
+        }
+        
+        li {
+            color: aliceblue;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 400;
+            text-align: center;
+            margin-top: relative;
+        }
+        
+        button {
+            margin-top: relative;
+        }
+        /* Styles for phone devices */
+        
+        @media (max-width: 768px) {
+            .phone-only {
+                display: block;
+            }
+            .desktop-only {
+                display: none;
+            }
+        }
+        /* Styles for non-phone devices */
+        
+        @media (min-width: 768px) {
+            .phone-only {
+                display: none;
+            }
+            .desktop-only {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .option {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    </style>
+</head>
 
-</script>
+<body>
+    <div id="intro" class="block black">
+        <nav class="pushpin-demo-nav pinned" data-target="intro">
+            <div class="nav-wrapper black">
+                <div class="container">
+                    <div class="brand-logo center">
+                        <h1 style="margin-top: 40vh;"> Welcome </h1>
+                        <!-- <p style="font-size:small;"> <i class="material-icons">expand-more</i> psst, scroll down for more <i class="material-icons">expand-more</i></p> -->
+                        <div class="row">
+                            <div class="col s2"> <i class="material-icons">expand_more</i>
+                            </div>
+                            <div class="col s8">
+                                <h1 style="font-size: small; font-weight: 400;"> scroll down for more </h1>
+                            </div>
+                            <div class="col s2"><i class="material-icons">expand_more</i></div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        </div>
 
+
+        <div id="filler" class="block_filler black">
+            <div class="pushpin-demo-nav" data-target="filler">
+            </div>
+        </div>
+
+        <div id="mid" class="block black">
+            <nav class="pushpin-demo-nav pinned" data-target="mid">
+                <div class="nav-wrapper black">
+                    <div class="container">
+                        <div class="brand-logo center">
+                            <h1>Introduction</h1>
+                            <p class="center"> Thank you for checking out my portfolio <br> I use this site to showcase my personal projects <br> Essentially, it is a place for me to showcase me</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div id="filler2" class="block_filler black">
+            <div class="pushpin-demo-nav" data-target="filler2">
+            </div>
+        </div>
+
+        <div id="choice" class="block black">
+            <nav class="pushpin-demo-nav pinned" data-target="choice">
+                <div class="nav-wrapper black">
+                    <div class="container">
+                        <div class="brand-logo center">
+
+                            <div id="phone-section" class="phone-only">
+                                <h1>Options</h1>
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <div class="card black">
+                                            <div class="card-content white-text">
+                                                <span class="card-title"><p><b>Choices </b></p></span>
+                                                <p>What section do you want to go to?</p>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="about_me.html" class="option">About me</a>
+                                                <a href="blog.html" class="option">Blog</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="desktop-section" class="desktop-only">
+                                <h1>Choose an Option</h1>
+                                <div class="row center">
+                                    <div class="col s12 m6">
+                                        <div class="card black">
+                                            <div class="card-content white-text">
+                                                <span class="card-title"><h1>Blog</h1></span>
+                                                <p>Find out:
+
+                                                    <li> Past projects </li>
+                                                    <li> Work in progess </li>
+                                                    <li> Projects to be </li>
+                                                    <p>Anything on the electronic to computing spectrum is covered</p>
+
+                                                </p>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="blog.html">Onwards</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div class="card black">
+                                            <div class="card-content white-text">
+                                                <span class="card-title"><h1>About me</h1></span>
+                                                <p>Find out:
+
+                                                    <li> Reason for all this </li>
+                                                    <li> More about me </li>
+                                                    <li> FAQ section </li>
+                                                    <li> Method to contact me </li>
+                                                    <li> Support me section </li>
+
+                                                </p>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="about_me.html">More about me</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.pushpin').pushpin();
+            });
+
+            $('.pushpin-demo-nav').each(function() {
+                var $this = $(this);
+                var $target = $('#' + $(this).attr('data-target'));
+                $this.pushpin({
+                    top: $target.offset().top,
+                    bottom: $target.offset().top + $target.outerHeight() - $this.height()
+                });
+            });
+        </script>
 </body>
+
 </html>
