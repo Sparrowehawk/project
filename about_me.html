@@ -9,14 +9,40 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        span,
+        div,
+        footer,
+        a {
+            color: #212121;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 400;
+            margin-top: relative;
+        }
+        
+        h3 {
+            color: #212121;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 600;
+        }
+        
+        span,
+        p {
+            color: #212121;
+            font-family: 'Ysabeau SC', sans-serif;
+            font-weight: 400;
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="header">
         <div class="navbar-fixed">
-            <nav class="nav-wrapper cyan">
+            <nav class="nav-wrapper black">
                 <div class="container">
-                    <a href="main.html" class="brand-logo">Sparrowe's Cave</a>
+                    <a href="main.html" class="brand-logo center">Eclectic Electronic</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
                         <i class="material-icons">menu</i>
                     </a>
@@ -29,16 +55,125 @@
         </div>
 
         <ul class="sidenav" id="mobile-links">
+            <li><a href="main.html">Main</a></li>
             <li><a href="blog.html">Blogs</a></li>
             <li><a href="about_me.html">About</a></li>
         </ul>
     </div>
 
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="purpose" class="section scrollspy">
+                    <h3>Purpose</h3>
+                    <p><b>What's the point of all of this? </b> <br> Here, as an engineering student, I have created a platform to express my creative desires. In my opinion, engineering is a creative field that combines elements of mathematics and more.
+                        This website serves as a medium for me to showcase my ideas, projects, and works in progress. It's a testament to my dedication and ambition, as I continuously strive to expand my knowledge and push my limits. This site itself
+                        is coding entirely by hand by me, to prove that I can code. However, I am not a frontend developer; therfore, the site isn't as nice compared to one I can make if I used a website builder. I sincerely hope you enjoy exploring this
+                        platform and everything it has to offer.</p>
+                </div>
 
-    <footer class="page-footer cyan">
+                <div id="about_me" class="section scrollspy">
+                    <h3>About Me</h3>
+                    <p>
+                        <b>Who am I?</b> <br> I am currently a student pursuing a dual degree of electronic engineering as well as computer science at university in the UK. To quote my lovely head of my course, it's 2/3rds mathematics, 2/3rds electronic
+                        engineering and 2/3rds computing. Some people may be wondering, why? Well, it's mainly because I am facsinated by things that move such as the treads of a conveyar belt or the joint of a robotic arm as it moves in a set direction.
+                        These marvels of engineering require both a good grasp of coding as well as electronic knowledge, thus my reasoning to pursue this degree.
+                    </p>
+                </div>
+
+                <div id="faq" class="section scrollspy">
+                    <h3>FAQ</h3>
+                    <ul class="collapsible expandable">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>What kind of projects do I do?</div>
+                            <div class="collapsible-body"><span>Well, I do anything in the spectrum from electronics to computing. However, I aim to not have one that is 100% of either; therefore, most of mine would be a mix of both.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Can I replicate these projects at home?</div>
+                            <div class="collapsible-body"><span>This entire site is a showcase of my projects, not a guide to how to do them safely. Therefore, for legal reasons, proceed at your own discretion. </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>How did you make this website?</div>
+                            <div class="collapsible-body"><span>I coded this site in Visual Studio Code by hand. The only thing that is not coded by my in this site is the logo (it's an image) and the CSS. I am using Materialize CSS, it's designed by 3 American collage students. Thesedays, it is owned by Google to "develop a system of design that allows for a unified user experience across all their products on any platform.". <a href="https://materializecss.com/about.html"><u> Read more by clicking here</u></a><br>I chose materialize as it is a lightweight framework which gives all the basic tools I need to create the site whilst demonstrating my coding prowess   </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Why not use a website builder?</div>
+                            <div class="collapsible-body"><span>What's the fun in using a drag and click site when I can just code this all by hand and not worry about any costs (apart from this domain which is from Google domains and costs £10 per year)</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>What is my goal?</div>
+                            <div class="collapsible-body"><span>Personally, I want to create a showcase of my imagination infused in the world of electronics and coding to present to everyone. However, that is not the only reason, if you have recieved a QR code from me in real life, you may also know this. This site is my portfolio to show what I can do (for future employers of course)</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>What equipment do I use</div>
+                            <div class="collapsible-body"><span>Any equipment that is used just for a certain project will be listed in the page. However, for every project, I do use my computer to do the coding as well as any CAD. All CAD is done in Autodesk Inventor as I have free student access. Any equipment that is used just for a certain project will be listed in the page. However, for every project, I do use my computer to do the coding as well as any CAD. All CAD is done in Autodesk Inventor as I have free student accsess. For any 3D parts printed, I use my Ender 3 V2 neo. For soldering, I use the PINECIL Smart Mini Portable Soldering Iron V2 due to the compact size and the fact it can reach upto 400 degrees celcius. If I do ever get a safe space to work on batteries, I would get my hands on a spot welder. If you do wish to contribute to help, feel free to donate below. For any 3D parts printed, I use my Ender 3 V2 neo. For soldering, I use the PINECIL Smart Mini Portable Soldering Iron V2 due to the compact size and the fact it can reach upto 400 degree Celsius. If I do ever get a safe space to work on batteries, I would get my hands on a spot welder. If you do wish to contribute to help, feel free to donate below. Your support is greatly appreciated.   </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Why do I not use my real name?</div>
+                            <div class="collapsible-body"><span>As this site is on the great internet, I've decided to use an online alias instead of my real name (as well as any specific personal information). All in the good name of privacy. However, if you got a business card with a QR code to this site, you'll find my real name there.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Are you employed?</div>
+                            <div class="collapsible-body"><span>Nope, just a student. However, if you are a business looking to hire an inturn, then my business email is listed below.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>What inspiration do I use?</div>
+                            <div class="collapsible-body"><span>I draw my inspiration from a wide range of places; one of the main places I get it from is where in my life I have been inconvenienced by something where I can create something to combat the inconvenience. Another one is inspiration from social media, where I see something amazing which I also want.<br> If you got any fun ideas, feel free to drop an email and I will try my best to respond in an orderly manner.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Are there anyone you would like to give a special thanks to?</div>
+                            <div class="collapsible-body"><span>Firstly, to my family, thank you.<br> Secondly, my friends <br> Lastly, special shoutout to Gogy, just in general knowledge and a friend I can bounce ideas off.    </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Can I contact you with questions or suggestions?</div>
+                            <div class="collapsible-body"><span>Sure! <br> Feel free to ask away or give any ideas. I am all ears to new outlooks of life</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>I have a million dollar idea for an app, can you make it for me?</div>
+                            <div class="collapsible-body"><span>If you geniuenly have a brilliant idea that no one has done before, wouldn't you rather a professional who can diverge more of time instead of me?</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>What's my opinion on AI?</div>
+                            <div class="collapsible-body"><span>Fun tool, definatly will replace some humans. However, it isn't something that should be relied on fully. For example, if I were to run an introduction to coding class, I'd use an extremely basic IDE, like IDLE (Python) or something on that calliber. Once someone has a good grasps of what they are doing, then I don't really have any objections to them using AI or other tools to assist them </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Wait, so you are not scared that AI will replace you?</div>
+                            <div class="collapsible-body"><span>Not really, AI aren't human. They can't effectively judge what a client wants in their work as most people are terrible at conveying their ideas across the table. Even with AI, the developer will never know what exactly the client wants. </span></div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Why don't I start a business?</div>
+                            <div class="collapsible-body"><span>Essentially, I do not want to go down that route for now. Currently, I want to expand my knowledge and keep exploring. Starting a business creates restrictions that limit what I can do. Also, I am still a university student, I don't plan to drop out and risk it all on a start up which may or may not work. At the end of the day, I want to be able to call myself "The Engineer".</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="contact" class="section scrollspy">
+                    <h3>Contact me</h3>
+                    <p>For all enquiries, please email me at: eclectic.electronic.engineer@gmail.com OR <a href="mailto:eclectic.electronic.engineer@gmail.com">click here.</a> </p>
+
+                </div>
+
+                <div id="support_me" class="section scrollspy">
+                    <h3>Support me</h3>
+                    <iframe id='kofiframe' src='https://ko-fi.com/sparrowe/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='sparrowe'></iframe>
+                </div>
+            </div>
+            <div class="col hide-on-small-only m3 l2">
+                <ul class="section table-of-contents pinned">
+                    <li><a href="#purpose">Purpose</a></li>
+                    <li><a href="#about_me">About me</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact me</a></li>
+                    <li><a href="#support_me">Support me</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer black">
         <div class="container">
-            <div class="col s3">
+            <div class="col s3" style="text-align: left;">
                 © 2023
             </div>
         </div>
@@ -51,6 +186,13 @@
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
+            $('.scrollspy').scrollSpy();
+            $('.collapsible').collapsible();
+
+            var elem = document.querySelector('.collapsible.expandable');
+            var instance = M.Collapsible.init(elem, {
+                accordion: false
+            });
         });
     </script>
 </body>

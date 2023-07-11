@@ -28,6 +28,13 @@
             }
         }
         
+        .intro_filler {
+            height: 30%;
+            @media (max-width: 768px) {
+                height: 10%
+            }
+        }
+        
         .pin-top {
             position: relative;
         }
@@ -116,13 +123,17 @@
 
 <body>
 
+    <div id="intro_filler" class="intro_filler black">
+        <div class="pushpin-demo-nav" data-target="intro_filler">
+        </div>
+    </div>
 
     <div id="intro" class="block black">
         <nav class="pushpin-demo-nav pinned" data-target="intro">
             <div class="nav-wrapper black">
                 <div class="container">
                     <div class="brand-logo center">
-                        <h1 style="margin-top: 25   vh;"> Welcome </h1>
+                        <h1> Welcome </h1>
                         <img src="Logo/terst-1.png">
                         <div class="row">
                             <div class="col s2"> <i class="material-icons">expand_more</i>
