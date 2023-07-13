@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Custom fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        span,
+        div,
+        footer,
+        a {
+            color: #212121;
+            font-weight: 400;
+            margin-top: relative;
+        }
+        
+        h2 {
+            color: #212121;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #212121;
+            font-weight: 500;
+        }
+        
+        span,
+        p {
+            color: #212121;
+            font-weight: 400;
+        }
+        
+        ul.dashed_list {
+            margin-left: 40px;
+        }
+        
+        ul.dashed_list li:before {
+            content: '\2014';
+            position: absolute;
+            margin-left: -20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper black">
+                <div class="container">
+                    <a href="index.html" class="brand-logo center" style="font-family: 'Ysabeau SC', sans-serif;;">Eclectic Electronic</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="blog.html" style="font-family: 'Ysabeau SC', sans-serif;;">Blog</a></li>
+                        <li><a href="about_me.html" style="font-family: 'Ysabeau SC', sans-serif;;">About me</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="index.html" style="font-family: 'Ysabeau SC', sans-serif;;">Main</a></li>
+            <li><a href="blog.html" style="font-family: 'Ysabeau SC', sans-serif;;">Blog</a></li>
+            <li><a href="about_me.html" style="font-family: 'Ysabeau SC', sans-serif;;">About me</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="col s12 m9 l10">
+            <h2>The blog</h2>
+            <p>Here, you can find a wide range of projects that are listed. They follow 3 main sections:</p>
+            <ul class="dashed_list">
+                <li><b>Ideas: </b>These are projects which are currently just a mental thought to me, the contents of them vary between extremely barebones to an idea with a decent plan.</li>
+                <li><b> In the works: </b>These are the projects which I have started but haven't finished yet.</li>
+                <li><b>Completed: </b>A project which is now complete.</li>
+            </ul>
+            <p>The structure of the projects will also be divided into these 3 sections, to visually demonstrate the thought process and the evaluation of each project over time. </p>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <ul class="tabs">
+                    <li class="tab col s4"><a href="#ideas">Ideas</a></li>
+                    <li class="tab col s4"><a href="#wip">In progress</a></li>
+                    <li class="tab col s4"><a href="#completed">Completed</a></li>
+                </ul>
+            </div>
+
+            <div id="ideas" class="col s12">
+                <div class="row">
+                    <div class="col s12 m7">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="cover_photos/test.jpg">
+                                <span class="card-title">Porject title</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Blurb</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">Click to proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wip" class="col s12">
+                <!-- Instert one -->
+            </div>
+
+            <div id="completed" class="col s12">
+                <!-- Insert one here -->
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="page-footer black">
+        <div class="container">
+            <div class="col s3" style="text-align: left;">
+                © 2023
+            </div>
+        </div>
+        <br>
+    </footer>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.scrollspy').scrollSpy();
+            $('.collapsible').collapsible();
+            $('.tabs').tabs();
+
+            var elem = document.querySelector('.collapsible.expandable');
+            var instance = M.Collapsible.init(elem, {
+                accordion: false
+            });
+        });
+    </script>
+</body>
+
+</html>
