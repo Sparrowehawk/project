@@ -123,16 +123,27 @@
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper black">
-            <div class="container">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="about_me">About me</a></li>
-                </ul>
-            </div>
+    <div class="header">
+        <div class="navbar">
+            <nav class="nav-wrapper black">
+                <div class="container">
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="blog" style="font-family: 'Ysabeau SC', sans-serif;;">Blog</a></li>
+                        <li><a href="about_me" style="font-family: 'Ysabeau SC', sans-serif;;">About me</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
+
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="./" style="font-family: 'Ysabeau SC', sans-serif;;">Main</a></li>
+            <li><a href="blog" style="font-family: 'Ysabeau SC', sans-serif;;">Blog</a></li>
+            <li><a href="about_me" style="font-family: 'Ysabeau SC', sans-serif;;">About me</a></li>
+        </ul>
+    </div>
 
     <div id="intro_filler" class="intro_filler black">
         <div class="pushpin-demo-nav" data-target="intro_filler">
@@ -260,6 +271,7 @@
         <script>
             $(document).ready(function() {
                 $('.pushpin').pushpin();
+                $('.sidenav').sidenav();
             });
 
             $('.pushpin-demo-nav').each(function() {
