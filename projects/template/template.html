@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <!-- Import prism css -->
+    <link href="/prism/prism.css" rel="stylesheet" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +30,7 @@
         h2 {
             color: #212121;
             font-weight: 600;
+            text-align: center;
         }
         
         h3 {
@@ -41,14 +44,11 @@
             font-weight: 400;
         }
         
-        ul.dashed_list {
-            margin-left: 40px;
-        }
-        
-        ul.dashed_list li:before {
-            content: '\2014';
-            position: absolute;
-            margin-left: -20px;
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
         }
     </style>
 </head>
@@ -79,37 +79,65 @@
 
     <div class="container">
         <div class="row">
-            <div class="col s12 m9 l10">
-                <h2>Title</h2>
-                <div class="row">
-                    <img src="fake.webp">
-                </div>
-                <h5>Intro</h5>
-                
-                <div id="idea" class="section scrollspy">
-                    <h4>Idea stage</h4>
-                    <p><b>Explain</b></p>
-                </div>
+            <h2>Title</h2>
+        </div>
+        <div class="row">
+            <img src="fake.webp">
+        </div>
+        <div class="row">
+            <h5><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem suscipit nostrum nesciunt molestiae laudantium ipsam totam blanditiis similique officiis facilis libero velit eos quos earum fugit, consectetur doloribus asperiores? Eius.</b></h5>
+        </div>
 
-                <div id="progression" class="section scrollspy">
-                    <h4>Progression</h4>
-                    <p><b>Explain</b></p>
-                </div>
+        <div class="intro">
+            <h4>Idea stage</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
+        </div>
 
-                <div id="completion" class="section scrollspy">
-                    <h4>Completion</h4>
-                    <p><b>Explain</b></p>
-                </div>
+        <div class="creation">
+            <h4>Creation stage</h4>
+            <p>Example of code (html):</p>
+            <pre>
+                <code class="language-html line-numbers copy-to-clipboard-button">
+                    &lt;p&gt;Hello world&lt;/p&gt;
+                </code>
+            </pre>
+            <p>Example of code (C)</p>
+            <pre>
+                <code class="language-C line-numbers copy-to-clipboard-button">
+                    #inc    lude &lt;stdio.h&gt;
 
+                    int main(){
+                        int num1;
+                        int num2;
+                        printf("Enter num 1: \n");
+                        scanf("%d", &num1);
+                        printf("Enter num 2: \n");
+                        scanf("%d", &num2);
+                        
+                        int sum = num1 + num2;
+                        int diff = num1 - num2;
+                        int mult = num1 * num2;
+                        int quot = num1 / num2;
+                    
+                        printf("Addition is: %d \n", sum);
+                        printf("Diff is: %d \n", diff);
+                        printf("Mult is: %d \n", mult);
+                        printf("Quot is: %d \n", quot);
+                    
+                        return 0;
+                    }
+                </code>
+            </pre>
+        </div>
 
-            </div>
-            <div class="col hide-on-small-only m3 l2">
-                <ul class="section table-of-contents pinned">
-                    <li><a href="#idea">Idea stage</a></li>
-                    <li><a href="#progrssion">Progression</a></li>
-                    <li><a href="#completion">Completion</a></li>
-                </ul>
-            </div>
+        <div class="completion">
+            <h4>Completion</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
+        </div>
+
+        <div class="outro">
+            <h4>Final thoughts</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
         </div>
     </div>
 
@@ -127,6 +155,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="/prism/prism.js"></script>
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
