@@ -10,9 +10,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Import prism css -->
-    <link href="/prism/prism.css" rel="stylesheet" />
+    <link href="prism/prism.css" rel="stylesheet" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,14 +48,14 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            max-width: fit-content;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <div class="navbar-fixed">
+        <div class="navbar">
             <nav class="nav-wrapper black">
                 <div class="container">
                     <a href="./" class="brand-logo center" style="font-family: 'Ysabeau SC', sans-serif;;">Eclectic Electronic</a>
@@ -155,7 +155,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="/prism/prism.js"></script>
+    <script src="prism/prism.js"></script>
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
