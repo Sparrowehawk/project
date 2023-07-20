@@ -14,13 +14,18 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Blob -->
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
     <title>Sparrowe</title>
     <style>
+        html,
         body {
             margin: 0;
             color: white;
             background: #e65745;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            max-width: 100%;
         }
         
         h1 {
@@ -105,6 +110,39 @@
                 background-image: url("landing_svg/second_b.svg");
             }
         }
+        
+        .blob-motion {
+            position: absolute;
+            transform: translateY(-30%);
+            z-index: 0;
+            @media screen and (max-width: 1024px) {
+                width: 75vh;
+            }
+        }
+        
+        .blob-content {
+            z-index: 1;
+        }
+        /* Styles for phone devices */
+        
+        @media (max-width: 1024px) {
+            .phone-only {
+                display: block;
+            }
+            .desktop-only {
+                display: none;
+            }
+        }
+        /* Styles for non-phone devices */
+        
+        @media (min-width: 1024px) {
+            .phone-only {
+                display: none;
+            }
+            .desktop-only {
+                display: block;
+            }
+        }
     </style>
 
 </head>
@@ -131,12 +169,27 @@
             <li><a href="about_me">About me</a></li>
         </ul>
     </div>
+
     <section class="purple-background">
-        <h1>Welcome</h1>
+        <div class="blob-content">
+            <h1>Welcome</h1>
+        </div>
+        <svg class="blob-motion" id="visual" viewBox="0 0 900 500" width="900" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <g transform="translate(462.6121450652612 275.04476585135524)">
+                <path id="blob1"
+                    d="M111 -135.1C153.8 -121.7 205.3 -102.5 198.9 -75.6C192.6 -48.7 128.4 -13.9 97.4 16.2C66.3 46.3 68.4 71.7 57.7 92.9C47 114.1 23.5 131 -11.9 147.3C-47.2 163.7 -94.4 179.3 -126.8 165.2C-159.1 151 -176.6 107 -194.5 61C-212.4 15 -230.8 -33 -222.7 -76.9C-214.7 -120.9 -180.2 -160.7 -138.7 -174.6C-97.2 -188.4 -48.6 -176.2 -7.2 -166.2C34.1 -156.3 68.2 -148.5 111 -135.1"
+                    fill="#0fb08d"></path>
+            </g>
+            <g transform="translate(453.0999352527407 295.0644030530613)" visibility="hidden">
+                <path id="blob2"
+                    d="M116.5 -147.1C159.3 -129.2 208 -106.3 212.7 -73.5C217.5 -40.6 178.2 2.3 154.9 43C131.6 83.7 124.3 122.4 101.1 126.1C78 129.8 39 98.7 2.3 95.6C-34.5 92.5 -69 117.4 -102.9 117.2C-136.8 117 -170.2 91.5 -193 54.8C-215.9 18 -228.3 -30.1 -211.6 -64.8C-194.9 -99.6 -149.2 -121 -109.1 -139.8C-69 -158.6 -34.5 -174.8 1.2 -176.4C36.8 -178 73.7 -165.1 116.5 -147.1"
+                    fill="#0fb08d"></path>
+            </g>
+        </svg>
     </section>
     <div class="spacer layer1"></div>
     <section class="cyan-background">
-        <h1>Summary</h1>
+        <h1 class="blob-content">Summary</h1>
         <p class="center"> Thank you for checking out my portfolio site.<br> I use this site to showcase my personal projects which includes everything under the spectrum of electronics to computing. <br> This site is an expression of me to present to you, my endless well
             of inovation.</p>
     </section>
@@ -147,7 +200,9 @@
             <div class="col s12 m6">
                 <div class="card card-colour">
                     <div class="card-content white-text">
-                        <span class="card-title"><h4>Blog</h4></span>
+                        <span class="card-title">
+                            <h4>Blog</h4>
+                        </span>
                         <p>Find out:
 
                             <li> Past projects </li>
@@ -165,7 +220,9 @@
             <div class="col s12 m6">
                 <div class="card card-colour">
                     <div class="card-content white-text">
-                        <span class="card-title"><h4>About me</h4></span>
+                        <span class="card-title">
+                            <h4>About me</h4>
+                        </span>
                         <p>Find out:
 
                             <li> Reason for all this </li>
@@ -199,6 +256,21 @@
                 accordion: false
             });
         });
+    </script>
+    <script>
+        const tween = KUTE.fromTo(
+            '#blob1', {
+                path: '#blob1'
+            }, {
+                path: '#blob2'
+            }, {
+                repeat: 999,
+                duration: 3000,
+                yoyo: true
+            }
+        )
+
+        tween.start();
     </script>
 </body>
 
