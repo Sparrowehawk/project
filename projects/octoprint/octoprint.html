@@ -17,7 +17,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Template</title>
+    <title>Octoprint setup</title>
 
     <style>
         body {
@@ -50,13 +50,25 @@
         p {
             color: #e0e0e0;
             font-weight: 400;
+            text-align: justify;
+            text-justify: inter-word;
         }
         
         img {
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        .main-image {
             max-width: 100vh;
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
+        }
+        
+        .blog-image {
+            max-width: 50vh;
             @media screen and (max-width: 1024px) {
                 width: 100%;
             }
@@ -90,65 +102,43 @@
 
     <div class="container">
         <div class="row">
-            <h2 class="center">Title</h2>
+            <h2 class="center">Unlocking the true potential via Octoprint</h2>
         </div>
         <div class="row">
-            <img src="fake.webp">
+            <img src="cover_pic.png" class="main-image">
         </div>
         <div class="row">
-            <h5><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem suscipit nostrum nesciunt molestiae laudantium ipsam totam blanditiis similique officiis facilis libero velit eos quos earum fugit, consectetur doloribus asperiores? Eius.</b></h5>
+            <h5><b>Octoprint, the most valuable modification any 3D printer enthuestist dreams of.</b></h5>
         </div>
 
         <div class="intro">
             <h4>Idea stage</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
+            <p> Octoprint, "The snappy web interface for your 3D printer", is the most powerful companion for 3D printing enthuestists. It's an open-source, web-based platform which revolutionises the user experiance by allowing individuals to remotely interact
+                with their printers. Long gone the days of worrying about micro SD cards! Developed by Gina Häußge. Octoprint empoweres users to manage the entire process remotely; from tweaking printer settings to processing a file to print to even printing
+                said file. There's truely is no limit to the possibilities Octoprint brings to the table. Addiotionally, it also allows for real-time video feedback via a camera, thus finally ending everyone's nightmare of a print failing whilst they
+                go outside and touch grass. <br><br> Enough with explaining what Octoprint is, why is it do I need it?<br> Well, as my first project, it is not only extremely (relatively) easy, it also is foriegn to a lot of people who don't spend majority
+                of their time tweaking around with their printer. Additionally, I really do need to set up a remote monitoring system for my printer due to numerous mid-print failures. These failures occur somehow happen to occur when I'm away from my
+                printer, preventing me from promptly stopping the print and avoiding further wastage of PLA. <br><br> <u>Addiotional equipment</u><br> <br><img src="La potato.jpg" class="blog-image"><br>Due to the simplicit nature that this should be,
+                there isn't that much extra items that are needed. However, I do need a mini computer to be able to run Octoprint. Normally, I would've went with a Rasberry Pi 3B+ due to having integrated WiFi as well as 1GB of RAM. However, due to supply
+                issues, the Le Potato by Libre will suffice as it exceeds the physical requirements needed as well as being small factor enough to store on the side. Obviously a webcam is also needed, this issue was promptly sorted when a £1.50 "generic"
+                webcam was found in CEX.<br><br>The overall approach shouldn't be that difficult, it <i>should</i> be a matter of just installing Octoprint on La Potato, configuring WiFi, configuring webcam and then, should be done. I hope I haven't jinxed
+                myself!
+            </p>
         </div>
 
         <div class="creation">
             <h4>Creation stage</h4>
-            <p>Example of code (html):</p>
-            <pre>
-                <code class="language-html line-numbers copy-to-clipboard-button">
-                    &lt;p&gt;Hello world&lt;/p&gt;
-                </code>
-            </pre>
-            <p>Example of code (C)</p>
-            <pre>
-                <code class="language-C line-numbers copy-to-clipboard-button">
-                    #inc    lude &lt;stdio.h&gt;
-
-                    int main(){
-                        int num1;
-                        int num2;
-                        printf("Enter num 1: \n");
-                        scanf("%d", &num1);
-                        printf("Enter num 2: \n");
-                        scanf("%d", &num2);
-                        
-                        int sum = num1 + num2;
-                        int diff = num1 - num2;
-                        int mult = num1 * num2;
-                        int quot = num1 / num2;
-                    
-                        printf("Addition is: %d \n", sum);
-                        printf("Diff is: %d \n", diff);
-                        printf("Mult is: %d \n", mult);
-                        printf("Quot is: %d \n", quot);
-                    
-                        return 0;
-                    }
-                </code>
-            </pre>
+            <p><b>TBD</b></p>
         </div>
 
         <div class="completion">
             <h4>Completion</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
+            <p><b>TBD</b></p>
         </div>
 
         <div class="outro">
             <h4>Final thoughts</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque nobis fuga, vero magnam quia ipsa ipsam at consequuntur dicta tempora, numquam, dolor veniam ea voluptatibus facilis dolore et! Dicta, non.</p>
+            <p><b>TBD</b></p>
         </div>
     </div>
 

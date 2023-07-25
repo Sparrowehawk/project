@@ -5125,7 +5125,6 @@ small {
 .btn-large:focus,
 .btn-small:focus,
 .btn-floating:focus {
-    /* hi */
     background-color: #1d7d74
 }
 
@@ -5150,7 +5149,6 @@ small {
 
 .btn-floating {
     display: inline-block;
-    /* Inside colour */
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -5159,7 +5157,7 @@ small {
     height: 40px;
     line-height: 40px;
     padding: 0;
-    background-color: #23bed2;
+    background-color: #26a69a;
     border-radius: 50%;
     -webkit-transition: background-color .3s;
     transition: background-color .3s;
@@ -7379,13 +7377,10 @@ input[type=range]::-ms-thumb {
     padding: 2px 0
 }
 
-
-/* ... */
-
 .table-of-contents a {
     display: inline-block;
     font-weight: 300;
-    color: #ccd5ae;
+    color: #757575;
     padding-left: 16px;
     height: 1.5rem;
     line-height: 1.5rem;
@@ -7393,22 +7388,16 @@ input[type=range]::-ms-thumb {
     display: inline-block
 }
 
-
-/* ... */
-
 .table-of-contents a:hover {
-    color: #e9edc9;
+    color: #a8a8a8;
     padding-left: 15px;
-    border-left: 1px solid #b7aed5
+    border-left: 1px solid #212121
 }
-
-
-/* ... */
 
 .table-of-contents a.active {
     font-weight: 500;
     padding-left: 14px;
-    border-left: 2px solid #b7aed5
+    border-left: 2px solid #212121
 }
 
 .sidenav {

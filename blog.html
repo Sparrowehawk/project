@@ -20,30 +20,33 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to right top, #4d194d, #471c4c, #411e4b, #3c2049, #372147, #31284e, #2a2e54, #223458, #0a4162, #004d68, #005969, #006466);
+            @media screen and (max-width: 1024px) {
+                background-image: linear-gradient(to top, #4d194d, #471c4c, #411e4b, #3c2049, #372147, #31284e, #2a2e54, #223458, #0a4162, #004d68, #005969, #006466);
+            }
         }
         
         span,
         div,
         footer,
         a {
-            color: #212121;
+            color: #e0e0e0;
             font-weight: 400;
             margin-top: relative;
         }
         
         h2 {
-            color: #212121;
+            color: #e0e0e0;
             font-weight: 600;
         }
         
         h3 {
-            color: #212121;
+            color: #e0e0e0;
             font-weight: 500;
         }
         
-        span,
         p {
-            color: #212121;
+            color: #e0e0e0;
             font-weight: 400;
         }
         
@@ -62,7 +65,7 @@
 <body>
     <div class="header">
         <div class="navbar">
-            <nav class="nav-wrapper black">
+            <nav class="nav-wrapper transparent">
                 <div class="container">
                     <a href="./" class="brand-logo center">Sparrowe</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
@@ -97,44 +100,69 @@
 
         <div class="row">
             <div class="col s12 m9 l10">
-                <ul class="tabs">
+                <ul class="tabs transparent">
                     <li class="tab col s4"><a href="#ideas">Ideas</a></li>
                     <li class="tab col s4"><a href="#wip">In progress</a></li>
                     <li class="tab col s4"><a href="#completed">Completed</a></li>
                 </ul>
             </div>
 
-            <div id="ideas" class="col s12">
+            <div id="ideas">
                 <div class="row">
-                    <div class="col s12 m7">
-                        <div class="card">
+                    <div class="col s12 m4">
+                        <div class="card transparent">
                             <div class="card-image">
-                                <img src="cover_photos/test.jpg">
-                                <span class="card-title">Porject title</span>
+                                <img src="projects/octoprint/logo.png">
+                                <a class="btn-floating halfway-fab waves-effect waves-light #ea8c80 btn-large" href="projects/octoprint/octoprint"><i class="material-icons">arrow_forward</i></a>
                             </div>
                             <div class="card-content">
-                                <p>Blurb</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="projects/template/template">Click to proceed</a>
+                                <span class="card-title">Octoprint</span>
+                                <p>Setting up Octoprint, an open-source utility, which enables using a 3D printer wirelessly</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="wip" class="col s12">
-                <!-- Instert one -->
+            <div id="wip">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card transparent">
+                            <div class="card-image">
+                                <img src="cover_photos/test.jpg">
+                                <a class="btn-floating halfway-fab waves-effect waves-light #80deea btn-large" href="projects/template/template.html"><i class="material-icons">arrow_forward</i></a>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Project title</span>
+                                <p>Blurb</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="completed" class="col s12">
-                <!-- Insert one here -->
+            <div id="completed">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card transparent">
+                            <div class="card-image">
+                                <img src="cover_photos/test.jpg">
+                                <a class="btn-floating halfway-fab waves-effect waves-light #80deea btn-large" href="projects/template/template.html"><i class="material-icons">arrow_forward</i></a>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Project title</span>
+                                <p>Blurb</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
 
     </div>
 
-    <footer class="page-footer black">
+    <footer class="page-footer transparent">
         <div class="container">
             <div class="col s3" style="text-align: left;">
                 © 2023
@@ -157,6 +185,15 @@
             var instance = M.Collapsible.init(elem, {
                 accordion: false
             });
+        });
+    </script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('sparrowe', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': 'transparent',
+            'floating-chat.donateButton.text-color': '#80deea'
         });
     </script>
 </body>
