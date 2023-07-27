@@ -10,9 +10,9 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
     <!-- Import prism css -->
-    <link href="prism/prism.css" rel="stylesheet" />
+    <link href="../prism/prism.css" rel="stylesheet" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,22 +81,22 @@
         <div class="navbar">
             <nav class="nav-wrapper transparent">
                 <div class="container">
-                    <a href="../../" class="brand-logo center">Sparrowe</a>
+                    <a href="../" class="brand-logo center">Sparrowe</a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/about_me">About me</a></li>
+                        <li><a href="../blog">Blog</a></li>
+                        <li><a href="../about_me">About me</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
 
         <ul class="sidenav" id="mobile-links">
-            <li><a href="../../">Main</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/about_me">About me</a></li>
+            <li><a href="../">Main</a></li>
+            <li><a href="../blog">Blog</a></li>
+            <li><a href="../about_me">About me</a></li>
         </ul>
     </div>
 
@@ -105,7 +105,7 @@
             <h2 class="center">Unlocking the true potential via Octoprint</h2>
         </div>
         <div class="row">
-            <img src="cover_pic.png" class="main-image">
+            <img src="octoprint/cover_pic.png" class="main-image">
         </div>
         <div class="row">
             <h5><b>Octoprint, the most valuable modification any 3D printer enthuestist dreams of.</b></h5>
@@ -118,11 +118,11 @@
                 said file. There's truely is no limit to the possibilities Octoprint brings to the table. Addiotionally, it also allows for real-time video feedback via a camera, thus finally ending everyone's nightmare of a print failing whilst they
                 go outside and touch grass. <br><br> Enough with explaining what Octoprint is, why is it do I need it?<br> Well, as my first project, it is not only extremely (relatively) easy, it also is foriegn to a lot of people who don't spend majority
                 of their time tweaking around with their printer. Additionally, I really do need to set up a remote monitoring system for my printer due to numerous mid-print failures. These failures occur somehow happen to occur when I'm away from my
-                printer, preventing me from promptly stopping the print and avoiding further wastage of PLA. <br><br> <u>Addiotional equipment</u><br> <br><img src="La potato.jpg" class="blog-image"><br>Due to the simplicit nature that this should be,
-                there isn't that much extra items that are needed. However, I do need a mini computer to be able to run Octoprint. Normally, I would've went with a Rasberry Pi 3B+ due to having integrated WiFi as well as 1GB of RAM. However, due to supply
-                issues, the Le Potato by Libre will suffice as it exceeds the physical requirements needed as well as being small factor enough to store on the side. Obviously a webcam is also needed, this issue was promptly sorted when a £1.50 "generic"
-                webcam was found in CEX.<br><br>The overall approach shouldn't be that difficult, it <i>should</i> be a matter of just installing Octoprint on La Potato, configuring WiFi, configuring webcam and then, should be done. I hope I haven't jinxed
-                myself!
+                printer, preventing me from promptly stopping the print and avoiding further wastage of PLA. <br><br> <u>Addiotional equipment</u><br> <br><img src="octoprint/La potato.jpg" class="blog-image"><br>Due to the simplicit nature that this
+                should be, there isn't that much extra items that are needed. However, I do need a mini computer to be able to run Octoprint. Normally, I would've went with a Rasberry Pi 3B+ due to having integrated WiFi as well as 1GB of RAM. However,
+                due to supply issues, the Le Potato by Libre will suffice as it exceeds the physical requirements needed as well as being small factor enough to store on the side. Obviously a webcam is also needed, this issue was promptly sorted when
+                a £1.50 "generic" webcam was found in CEX.<br><br>The overall approach shouldn't be that difficult, it <i>should</i> be a matter of just installing Octoprint on La Potato, configuring WiFi, configuring webcam and then, should be done.
+                I hope I haven't jinxed myself!
             </p>
         </div>
 
@@ -156,7 +156,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="prism/prism.js"></script>
+    <script src="../prism/prism.js"></script>
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
