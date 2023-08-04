@@ -50,14 +50,8 @@
             font-weight: 400;
         }
         
-        ul.dashed_list {
-            margin-left: 40px;
-        }
-        
-        ul.dashed_list li:before {
-            content: '\2014';
-            position: absolute;
-            margin-left: -20px;
+        small {
+            color: #b7b7b7;
         }
     </style>
 </head>
@@ -87,78 +81,45 @@
     </div>
 
     <div class="container">
-        <div class="col s12 m9 l10">
-            <h2>The blog</h2>
-            <p>Here, you can find a wide range of projects that are listed. They follow 3 main sections:</p>
-            <ul class="dashed_list">
-                <li><b>Ideas: </b>These are projects which are currently just a mental thought to me, the contents of them vary between extremely barebones to an idea with a decent plan.</li>
-                <li><b> In the works: </b>These are the projects which I have started but haven't finished yet.</li>
-                <li><b>Completed: </b>A project which is now complete.</li>
-            </ul>
-            <p>The structure of the projects will also be divided into these 3 sections, to visually demonstrate the thought process and the evaluation of each project over time. </p>
-        </div>
+
+        <h2 class="center">The blog</h2>
+        <p>Here, you can find a wide range of projects that are listed. Each takes a good amount of time, energy and recourses to complete; therefore, please excuse the irregular updates.<br><br>Each blog goes through the creation cycle, this entails a stage
+            for the idea to transition from a thought to something feasible. Afterwards, the idea is planned in great detail, making sure that the right equipment is available and that the project is achievable. Once all the recourses are together, then
+            the actual creation stage can commence. Here, anything and everything will go wrong. Finally, once everything is completed, is it finally time to write a full blog post about it to share with the audience.</p>
+        <br>
+
 
         <div class="row">
-            <div class="col s12 m9 l10">
-                <ul class="tabs transparent">
-                    <li class="tab col s4"><a href="#ideas">Ideas</a></li>
-                    <li class="tab col s4"><a href="#wip">In progress</a></li>
-                    <li class="tab col s4"><a href="#completed">Completed</a></li>
-                </ul>
-            </div>
-
-            <div id="ideas">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card transparent">
-                            <div class="card-image">
-                                <img src="projects/octoprint/logo.png">
-                                <a class="btn-floating halfway-fab waves-effect waves-light #ea8c80 btn-large" href="projects/octoprint"><i class="material-icons">arrow_forward</i></a>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">Octoprint</span>
-                                <p>Setting up Octoprint, an open-source utility, which enables using a 3D printer wirelessly</p>
-                            </div>
+            <div class="blog">
+                <div class="hide-on-med-and-down">
+                    <div class="col s4 offset-s2">
+                        <img src="projects/octoprint/logo.png">
+                    </div>
+                    <div class="col s4">
+                        <h4>Octoprint</h4>
+                        <p>Setting up Octoprint, an open-source utility, which enables using a 3D printer wirelessly</p>
+                        <a class="waves-effect waves-light btn"><i class="material-icons right">arrow_forward</i>Proceed</a>
+                        <p><small>Augest 5, 2023</small></p>
+                    </div>
+                </div>
+                <div class="hide-on-large-only">
+                    <div class="row center">
+                        <div class="col s12">
+                            <img src="projects/octoprint/logo.png">
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="col s12">
+                            <h4>Octoprint</h4>
+                            <p>Setting up Octoprint, an open-source utility, which enables using a 3D printer wirelessly</p>
+                            <a class="waves-effect waves-light btn"><i class="material-icons right">arrow_forward</i>Proceed</a>
+                            <p><small>August 4, 2023</small></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div id="wip">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card transparent">
-                            <div class="card-image">
-                                <img src="cover_photos/test.jpg">
-                                <a class="btn-floating halfway-fab waves-effect waves-light #80deea btn-large" href="projects/template"><i class="material-icons">arrow_forward</i></a>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">Project title</span>
-                                <p>Blurb</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="completed">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card transparent">
-                            <div class="card-image">
-                                <img src="cover_photos/test.jpg">
-                                <a class="btn-floating halfway-fab waves-effect waves-light #80deea btn-large" href="projects/template"><i class="material-icons">arrow_forward</i></a>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">Project title</span>
-                                <p>Blurb</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+    </div>
 
     </div>
 
