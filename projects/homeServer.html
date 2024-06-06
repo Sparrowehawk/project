@@ -107,11 +107,12 @@
     </div>
 
     <div class="container">
-        <div class="row"> 
+        <div class="row">
             <h2 class="center">Personal home server breathes life</h2>
         </div>
         <div class="row">
-            <img src="octoprint/cover_pic.png" class="main-image"> <!-- TO-DO-->
+            <img src="home_server/cover_pic.jpg" class="main-image">
+            <!-- TO-DO-->
         </div>
         <div class="row">
             <h5><b>A server that lives at home with endless possibilities of implementation</b></h5>
@@ -119,23 +120,30 @@
 
         <section class="intro">
             <h4>Idea stage</h4>
-            <p> 
-                Over the winter holidays, I lie down on my bed at home wondering, "is there a way to watch mt own media remotely". To which, I thought of creating my very own home server. Not only will it open the possibility of having my own media source, it would also solve my everdread issue of 3rd party cloud providers bugging me about low storage space. So, I set off for an adventure. From initial glance, the requirements for this project would have to be a low power system with possibilities of expansion down the road as well as to be able to handle transcoding for video feedback.
+            <p>
+                Over the winter holidays, I lie down on my bed at home wondering, "is there a way to watch mt own media remotely". To which, I thought of creating my very own home server. Not only will it open the possibility of having my own media source, it would also
+                solve my everdread issue of 3rd party cloud providers bugging me about low storage space. So, I set off for an adventure. From initial glance, the requirements for this project would have to be a low power system with possibilities of
+                expansion down the road as well as to be able to handle transcoding for video feedback.
             </p>
         </section>
 
         <section class="hardware">
             <h4>Hardware</h4>
             <p>
-                Based off the requirement of needing to be able to handle encoding, CPU selection is where I began. An alternative solution would be to use a GPU for encoding, however, the size of a GPU would mean that the overall system would be a bit too big for my liking; additionally, adding a GPU would entail a greater power consumption. Therefore, the system would go ahead with a CPU with integrated graphics. The next step would be to decide said CPU; after some research, I decided to go with an Intel CPU for the main reason of better encoding and transcoding than AMD. More spefically would be the Kaby Lake generation due to the ability to encode 10 bit HVEC. <br><br>
-                The next step would be the approach to the overall system; self made, 2nd hand or pre-built. The main disadvantage of a self made system and 2nd hand is both the cost factor as well as the fact that majority of systems are physically too big. Enter the prebuilt: HP Elitedesk 800 G3. A system made for general office use by embracing a small form factor in a standardise shape. The system can be found on eBay for around £100; however, I was able to get one for £80. It comes with 8GB DDR4 RAM, an i5-7100T (which is not in the default specification) and a 1TB HDD. It was perfect for my usecase. <br><br>
-                Lastly, would be to decide the storage configuration. After spending too much money on the system, I've decided to re-use an old 1tb HDD that I had lying about in my current system in Raid 1. The main disadvantage is that because there's only 2 HDD bays in the HP, I would have to replace both if I were to upgrade down the line.  
+                Based off the requirement of needing to be able to handle encoding, CPU selection is where I began. An alternative solution would be to use a GPU for encoding, however, the size of a GPU would mean that the overall system would be a bit too big for my
+                liking; additionally, adding a GPU would entail a greater power consumption. Therefore, the system would go ahead with a CPU with integrated graphics. The next step would be to decide said CPU; after some research, I decided to go with
+                an Intel CPU for the main reason of better encoding and transcoding than AMD. More spefically would be the Kaby Lake generation due to the ability to encode 10 bit HVEC. <br><br> The next step would be the approach to the
+                overall system; self made, 2nd hand or pre-built. The main disadvantage of a self made system and 2nd hand is both the cost factor as well as the fact that majority of systems are physically too big. Enter the prebuilt: HP Elitedesk 800
+                G3. A system made for general office use by embracing a small form factor in a standardise shape. The system can be found on eBay for around £100; however, I was able to get one for £80. It comes with 8GB DDR4 RAM, an i5-7100T (which is
+                not in the default specification) and a 1TB HDD. It was perfect for my usecase. <br><br> Lastly, would be to decide the storage configuration. After spending too much money on the system, I've decided to re-use an old 1tb HDD that I had
+                lying about in my current system in Raid 1. The main disadvantage is that because there's only 2 HDD bays in the HP, I would have to replace both if I were to upgrade down the line.
             </p>
         </section>
         <section class="vm">
             <h4>Virtual Machine</h4>
             <p>
-                Due to the nature of the system, it is practically a pain to have everything running on one operating system (OS); therefore, I have decided to use Proxmox as the base OS. Proxmox is a Debian based OS that allows for virtualisation of multiple OS at the same time. Thankfully, there was no real issues setting it up for the first time. Overall it is a joy to use with very simple steps to be able to create multiple VMs in one system.<br><br>
+                Due to the nature of the system, it is practically a pain to have everything running on one operating system (OS); therefore, I have decided to use Proxmox as the base OS. Proxmox is a Debian based OS that allows for virtualisation of multiple OS at the
+                same time. Thankfully, there was no real issues setting it up for the first time. Overall it is a joy to use with very simple steps to be able to create multiple VMs in one system.<br><br>
                 <!-- Proxmox pic -->
             </p>
         </section>
@@ -143,9 +151,13 @@
         <section class="truenas">
             <h4>TrueNAS</h4>
             <p>
-                The same cannot be said for TrueNAS; I have yet to meet anything as cursed and difficult to use as TrueNAS. To their credit, being able to setup a Raid 1 setup with a SMB share (something which allows for Windows and other OS varients to use the storage allocated) was simple. The issues arise if you decide to use their additional applications. I had planned to use Nextcloud, a cloud storage solution, in conjuction with an internal networking trafficing app which would use reverse-proxy to be able to access the Nextcloud server from outside the network. However, there was no possible way to find an app to do that. <br><br>
-                This is where TrueCharts comes into play as TrueNAS's catalogue has poor selection. Turns out everything I need is directly available; therefore installation and setup would be like walking in dreamland, right? Further from the truth. During the installation of Nextcloud from TrueCharts's catalogue, there were multiple of prerequisites that posed issues left right and centre. Everything had to be handled like a glass tower; otherwise, the entire system would just crash. An example would be if you decide to change any option in either Nextcloud or Traefik would result in the address of the site not being accsessible. <br><br>
-                After some time troubleshooting, I decided to at least have a working SMB share as well as TrueNAS's own Nextcloud instilation (with a reverse proxy in Linux) instead. The reason for installing a version of Nextcloud here is that it is a lot harder to setup an instance on Linux rather than TrueNAS
+                The same cannot be said for TrueNAS; I have yet to meet anything as cursed and difficult to use as TrueNAS. To their credit, being able to setup a Raid 1 setup with a SMB share (something which allows for Windows and other OS varients to use the storage
+                allocated) was simple. The issues arise if you decide to use their additional applications. I had planned to use Nextcloud, a cloud storage solution, in conjuction with an internal networking trafficing app which would use reverse-proxy
+                to be able to access the Nextcloud server from outside the network. However, there was no possible way to find an app to do that. <br><br> This is where TrueCharts comes into play as TrueNAS's catalogue has poor selection.
+                Turns out everything I need is directly available; therefore installation and setup would be like walking in dreamland, right? Further from the truth. During the installation of Nextcloud from TrueCharts's catalogue, there were multiple
+                of prerequisites that posed issues left right and centre. Everything had to be handled like a glass tower; otherwise, the entire system would just crash. An example would be if you decide to change any option in either Nextcloud or Traefik
+                would result in the address of the site not being accsessible. <br><br> After some time troubleshooting, I decided to at least have a working SMB share as well as TrueNAS's own Nextcloud instilation (with a reverse proxy in Linux) instead.
+                The reason for installing a version of Nextcloud here is that it is a lot harder to setup an instance on Linux rather than TrueNAS
                 <!-- Picture of truenas -->
             </p>
         </section>
@@ -153,17 +165,21 @@
         <section class="jellyfin">
             <h4>Jellyfin</h4>
             <p>
-                Previous from starting this project, I had managed to create a Jellyfin server based on Windows whilst using Caddy and DuckDNS to be able to remotely acsess my library remotely; it took me about 30 minutes to set it up. Thus, it was no suprise that setting it up on Linux was equally straightforward. The flavour of Linux used was Ubuntu Server 20.04 LTS due to good reliability as well as ease of use. I did try and tinker with using Debian instead; however, I was unable to get the system to boot for some reason. Alongside, I was considering using Arch; however, there are a handful of good reasons to not use it. Firstly, mounting an SMB share is a lot harder than expected. Secondly, the system would be a lot less stable and finally, the system would be a harder to maintain due to constant updates avaliable. There was also the possibility of straight up using Windows for the OS, but this was quickly ruled out due to system restrains. <br><br>
-                After setting up the Jellyfin instnace, it was time to use reverse proxy to remotely access the server. How does it work, well, I think it is best explained via a diagram
-                <br><img src="octoprint/La potato.jpg" class="blog-image" alt="A picture of Le Potato"><br> <!-- TO-DO-->
-                After utilising Caddy and Cloudflare (with relative difficulties), I was able to have both, the cloud storage and media server, accessible remotely. I have also set it up so that the Jellyfin's library can be accessed via the Nextcloud server. 
+                Previous from starting this project, I had managed to create a Jellyfin server based on Windows whilst using Caddy and DuckDNS to be able to remotely acsess my library remotely; it took me about 30 minutes to set it up. Thus, it was no suprise that setting
+                it up on Linux was equally straightforward. The flavour of Linux used was Ubuntu Server 20.04 LTS due to good reliability as well as ease of use. I did try and tinker with using Debian instead; however, I was unable to get the system to
+                boot for some reason. Alongside, I was considering using Arch; however, there are a handful of good reasons to not use it. Firstly, mounting an SMB share is a lot harder than expected. Secondly, the system would be a lot less stable and
+                finally, the system would be a harder to maintain due to constant updates avaliable. There was also the possibility of straight up using Windows for the OS, but this was quickly ruled out due to system restrains. <br><br>                After setting up the Jellyfin instnace, it was time to use reverse proxy to remotely access the server. How does it work, well, I think it is best explained via a diagram
+                <br><cite>Cloudflare</cite><img src="home_server/reverse_proxy_flow.png" class="blog-image" alt="A diagram of reverse proxy"><br>
+                <!-- TO-DO-->
+                After utilising Caddy and Cloudflare (with relative difficulties), I was able to have both, the cloud storage and media server, accessible remotely. I have also set it up so that the Jellyfin's library can be accessed via the Nextcloud server.
             </p>
         </section>
 
         <section class="outro">
             <h4>Conclusion</h4>
             <p>
-                After a painful week or so of setting things up and realising that it doesn't work (surely I'm not the issue), the final system is all ready. Final modification would be to install a VPN (Tailscale) so that any future modificatins can be done remotely. Honestly, the entire journey was fun and educational. I'm glad I have decided to push myself out of my comfert zone to learn a new skill in an area I haven't dwelled in before.
+                After a painful week or so of setting things up and realising that it doesn't work (surely I'm not the issue), the final system is all ready. Final modifications would be to install a VPN (Tailscale) so that any future modifications can be done remotely.
+                Honestly, the entire journey was fun and educational. I'm glad I have decided to push myself out of my comfert zone to learn a new skill in an area I haven't dwelled in before.
             </p>
         </section>
     </div>
