@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="sparrowe, Sparrowe">
+    <meta name="twitter:title" content="Sparrowe">
+    <meta name="twitter:description" content="Welcome to my personal site, showcasing projects from electronics to computing.">
+    <!-- <meta name="image" content=""> -->
+
+    <!-- Custom fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <!-- Import prism css -->
+    <link href="../prism/prism.css" rel="stylesheet" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Home server setup</title>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to right top, #4d194d, #471c4c, #411e4b, #3c2049, #372147, #31284e, #2a2e54, #223458, #0a4162, #004d68, #005969, #006466);
+            @media screen and (max-width: 1024px) {
+                background-image: linear-gradient(to top, #4d194d, #471c4c, #411e4b, #3c2049, #372147, #31284e, #2a2e54, #223458, #0a4162, #004d68, #005969, #006466);
+            }
+        }
+        
+        span,
+        div,
+        footer,
+        a {
+            color: #e0e0e0;
+            font-weight: 400;
+            margin-top: relative;
+        }
+        
+        h2 {
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        
+        p {
+            color: #e0e0e0;
+            font-weight: 400;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-image {
+            max-width: 100%;
+        }
+        
+        .blog-image {
+            max-width: 75%;
+        }
+        
+        video {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <nav class="nav-wrapper transparent">
+                <div class="container">
+                    <a href="../" class="brand-logo center">Sparrowe</a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="../blog">Blog</a></li>
+                        <li><a href="../about_me">About me</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="../">Main</a></li>
+            <li><a href="../blog">Blog</a></li>
+            <li><a href="../about_me">About me</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h2 class="center">Home Server Take 2</h2>
+        </div>
+        <div class="row">
+            <img src="home_server/cover_pic.jpg" class="main-image">
+        </div>
+        <div class="row">
+            <h5><b>So what went wrong?</b></h5>
+        </div>
+
+        <section class="intro">
+            <h4>Introduction</h4>
+            <p>
+                As some of you dear readers may recall, I had a functioning self-hosted home server which is supposed to be working perfectly. However, as alluded to earlier, it wasn't. To give a brief summary of the journey so far, I've managed to secure my hands on
+                an old office PC which I transformed to become a self-hosted server. Utilising Proxmox to handle multiple Virtual Machine (VM) instances. In this configuration, there was one VM dedicated to TrueNAS, "the World's #1 Open Source Storage",
+                which was used for a RAID configuration as well as a NextCloud instance (self hosted cloud storage); with the other VM dedicated to a Ubuntu server hosting Jellyfin, the remote media playback tool.
+            </p>
+        </section>
+
+        <section class="errors">
+            <h4>So what went wrong?</h4>
+            <p>
+                Not long after setup, it was clear that there was a handful of edge case issues that needed to be solved. Immediately, I found out about docker and realised why majority of people use that compared to the voodoo magic I chose to do. Docker is essentially
+                an OS which uses OS level virtualisation to create mini VMs for each piece of software. It is mainly built for developers and is massively easier to execute and get working compared to my solution. However, just because we found an easier
+                method doesn't mean we have to go for it. <br><br> Back on topic of why things went wrong, firstly, Nextcloud cannot be configured so that the storage location of the data is on the SMB share which can be accessed externaly;
+                something I hoped to accomplish so that I can import media into the Jellyfin instance remotely. Due to this issue (and me accidentally breaking the entire server), I've decided to go from scratch and start again.
+            </p>
+        </section>
+
+        <section class="changes">
+            <h4>Design changes</h4>
+            <p>
+                Generally speaking, the hardware in the system is fine; however, upgrading the CPU wouldn't hurt so the system has been upgraded to a (used) i7-7700.
+            </p>
+        </section>
+        <section class="vm">
+            <h4>Virtual Machine</h4>
+            <p>
+                Due to the nature of the system, it is practically a pain to have everything running on one operating system (OS); therefore, I have decided to use Proxmox as the base OS. Proxmox is a Debian based OS that allows for virtualisation of multiple OS at the
+                same time. Thankfully, there was no real issues setting it up for the first time. Overall it is a joy to use with very simple steps to be able to create multiple VMs in one system.<br><br>
+                <!-- Proxmox pic -->
+            </p>
+        </section>
+
+        <section class="truenas">
+            <h4>TrueNAS</h4>
+            <p>
+                The same cannot be said for TrueNAS; I have yet to meet anything as cursed and difficult to use as TrueNAS. To their credit, being able to setup a Raid 1 setup with a SMB share (something which allows for Windows and other OS varients to use the storage
+                allocated) was simple. The issues arise if you decide to use their additional applications. I had planned to use Nextcloud, a cloud storage solution, in conjuction with an internal networking trafficing app which would use reverse-proxy
+                to be able to access the Nextcloud server from outside the network. However, there was no possible way to find an app to do that. <br><br> This is where TrueCharts comes into play as TrueNAS's catalogue has poor selection.
+                Turns out everything I need is directly available; therefore installation and setup would be like walking in dreamland, right? Further from the truth. During the installation of Nextcloud from TrueCharts's catalogue, there were multiple
+                of prerequisites that posed issues left right and centre. Everything had to be handled like a glass tower; otherwise, the entire system would just crash. An example would be if you decide to change any option in either Nextcloud or Traefik
+                would result in the address of the site not being accsessible. <br><br> After some time troubleshooting, I decided to at least have a working SMB share as well as TrueNAS's own Nextcloud instilation (with a reverse proxy in Linux) instead.
+                The reason for installing a version of Nextcloud here is that it is a lot harder to setup an instance on Linux rather than TrueNAS
+                <!-- Picture of truenas -->
+            </p>
+        </section>
+
+        <section class="jellyfin">
+            <h4>Jellyfin</h4>
+            <p>
+                Previous from starting this project, I had managed to create a Jellyfin server based on Windows whilst using Caddy and DuckDNS to be able to remotely acsess my library remotely; it took me about 30 minutes to set it up. Thus, it was no suprise that setting
+                it up on Linux was equally straightforward. The flavour of Linux used was Ubuntu Server 20.04 LTS due to good reliability as well as ease of use. I did try and tinker with using Debian instead; however, I was unable to get the system to
+                boot for some reason. Alongside, I was considering using Arch; however, there are a handful of good reasons to not use it. Firstly, mounting an SMB share is a lot harder than expected. Secondly, the system would be a lot less stable and
+                finally, the system would be a harder to maintain due to constant updates avaliable. There was also the possibility of straight up using Windows for the OS, but this was quickly ruled out due to system restrains. <br><br>                After setting up the Jellyfin instnace, it was time to use reverse proxy to remotely access the server. How does it work, well, I think it is best explained via a diagram
+                <br><cite>Cloudflare</cite><img src="home_server/reverse_proxy_flow.png" class="blog-image" alt="A diagram of reverse proxy"><br>
+                <!-- TO-DO-->
+                After utilising Caddy and Cloudflare (with relative difficulties), I was able to have both, the cloud storage and media server, accessible remotely. I have also set it up so that the Jellyfin's library can be accessed via the Nextcloud server.
+            </p>
+        </section>
+
+        <section class="outro">
+            <h4>Conclusion</h4>
+            <p>
+                After a painful week or so of setting things up and realising that it doesn't work (surely I'm not the issue), the final system is all ready. Final modifications would be to install a VPN (Tailscale) so that any future modifications can be done remotely.
+                Honestly, the entire journey was fun and educational. I'm glad I have decided to push myself out of my comfert zone to learn a new skill in an area I haven't dwelled in before.
+            </p>
+        </section>
+    </div>
+
+
+
+    <footer class="page-footer transparent ">
+        <div class="container ">
+            <div class="col s3 " style="text-align: left; ">
+                © 2023-2024
+            </div>
+        </div>
+        <br>
+    </footer>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js "></script>
+    <script src="../prism/prism.js "></script>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.scrollspy').scrollSpy();
+            $('.collapsible').collapsible();
+            $('.tabs').tabs();
+
+            var elem = document.querySelector('.collapsible.expandable');
+            var instance = M.Collapsible.init(elem, {
+                accordion: false
+            });
+        });
+    </script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('sparrowe', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': 'transparent',
+            'floating-chat.donateButton.text-color': '#80deea'
+        });
+    </script>
+</body>
+
+</html>
