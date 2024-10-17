@@ -139,54 +139,45 @@
         <section class="changes">
             <h4>Design changes</h4>
             <p>
-                Generally speaking, the hardware in the system is fine; however, upgrading the CPU wouldn't hurt so the system has been upgraded to a (used) i7-7700.
-            </p>
-        </section>
-        <section class="vm">
-            <h4>Virtual Machine</h4>
-            <p>
-                Due to the nature of the system, it is practically a pain to have everything running on one operating system (OS); therefore, I have decided to use Proxmox as the base OS. Proxmox is a Debian based OS that allows for virtualisation of multiple OS at the
-                same time. Thankfully, there was no real issues setting it up for the first time. Overall it is a joy to use with very simple steps to be able to create multiple VMs in one system.<br><br>
-                <!-- Proxmox pic -->
+                Generally speaking, the hardware in the system is fine; however, upgrading the CPU wouldn't hurt so the system has been upgraded to a (used) i7-7700. Apart from that, there were no other real hardware changes to the system. Addiontally, the RAM capacity was upgraded from 16GB to 32GB; despite this, it shouldn't make a major difference unless the server was used by multiple users at the same time.
             </p>
         </section>
 
-        <section class="truenas">
-            <h4>TrueNAS</h4>
+        <section class="connection">
+            <h4>Connection issues</h4>
             <p>
-                The same cannot be said for TrueNAS; I have yet to meet anything as cursed and difficult to use as TrueNAS. To their credit, being able to setup a Raid 1 setup with a SMB share (something which allows for Windows and other OS varients to use the storage
-                allocated) was simple. The issues arise if you decide to use their additional applications. I had planned to use Nextcloud, a cloud storage solution, in conjuction with an internal networking trafficing app which would use reverse-proxy
-                to be able to access the Nextcloud server from outside the network. However, there was no possible way to find an app to do that. <br><br> This is where TrueCharts comes into play as TrueNAS's catalogue has poor selection.
-                Turns out everything I need is directly available; therefore installation and setup would be like walking in dreamland, right? Further from the truth. During the installation of Nextcloud from TrueCharts's catalogue, there were multiple
-                of prerequisites that posed issues left right and centre. Everything had to be handled like a glass tower; otherwise, the entire system would just crash. An example would be if you decide to change any option in either Nextcloud or Traefik
-                would result in the address of the site not being accsessible. <br><br> After some time troubleshooting, I decided to at least have a working SMB share as well as TrueNAS's own Nextcloud instilation (with a reverse proxy in Linux) instead.
-                The reason for installing a version of Nextcloud here is that it is a lot harder to setup an instance on Linux rather than TrueNAS
-                <!-- Picture of truenas -->
+                For a few months, there seemed to be an issue as connecting to the server was just not possible remotely. Unfortunatly, I was not present in the same building as where the server was located, meaning I had no way to verify if I could connect via the internal IP. This one setback resulted in the setback due to a unique particular issue. It couldn't be that the public IP address of the place had changed as I had connection to the network. Turns out due to the power settings set in the internal VM running Ubuntu, the OS handling Tailscale, shut the VM off after some time of inacctivity. Resulting in the need for an in person intrervention to fix the issue at hand.
+                <br><br> After this mishap, another difficulty arose, the external web URLs connected to the internal IP and ports for internal sites (e.g., Jellyfin) stopped working. After some discovery, the determining reason was down to the fact that my ISP set my router to a dynamic IP address. Finding the issue is one thing, dealing with it is another. Setting your IP to be static instead of dynamic isn't challanging, instead, is is very risky from a cybersecurity point of view.  
             </p>
         </section>
 
-        <section class="jellyfin">
-            <h4>Jellyfin</h4>
+        <section class="cybersecurity">
+            <h4>Cybersecurity</h4>
             <p>
-                Previous from starting this project, I had managed to create a Jellyfin server based on Windows whilst using Caddy and DuckDNS to be able to remotely acsess my library remotely; it took me about 30 minutes to set it up. Thus, it was no suprise that setting
-                it up on Linux was equally straightforward. The flavour of Linux used was Ubuntu Server 20.04 LTS due to good reliability as well as ease of use. I did try and tinker with using Debian instead; however, I was unable to get the system to
-                boot for some reason. Alongside, I was considering using Arch; however, there are a handful of good reasons to not use it. Firstly, mounting an SMB share is a lot harder than expected. Secondly, the system would be a lot less stable and
-                finally, the system would be a harder to maintain due to constant updates avaliable. There was also the possibility of straight up using Windows for the OS, but this was quickly ruled out due to system restrains. <br><br>                After setting up the Jellyfin instnace, it was time to use reverse proxy to remotely access the server. How does it work, well, I think it is best explained via a diagram
-                <br><cite>Cloudflare</cite><img src="home_server/reverse_proxy_flow.png" class="blog-image" alt="A diagram of reverse proxy"><br>
-                <!-- TO-DO-->
-                After utilising Caddy and Cloudflare (with relative difficulties), I was able to have both, the cloud storage and media server, accessible remotely. I have also set it up so that the Jellyfin's library can be accessed via the Nextcloud server.
+                What is a dynamic IP address? A dynamic address works by changing your public IP periodically, down to the ISP discression. This is mainly done via DHCP, or Dynamiv Host Configuration Protocol, which automatically provides devices onto a network their own IP and subnets. So why do they exist? Short answer, it's cheaper. Essentially, ISP's can lease out a specific IP address to a household for a temporary length of time and let it automatically keep changing. It also allows for (technically) unlimited IP addresses to be assigned; whereas if a static IP was to be used, each address would need to be purchased. It also boosts security as 3rd party connections will have to go through a medium to connect to the address. Despite all of this, it is still possible to set my public IP to be permenenant, or even bind it to a dynamic DNS which would help counteract this. However, I personally do not want to jeprodise the cyber safety of my household over a project.
+                <br><br> Another cybersecurity risk was directly setting the IP address to a domain via reverse proxy, despite the ease of use of reverse proxy, it means that anyone can try and infiltrate the home network including devices that are not listed in the reverse proxy. Addiontally, for some unknown reason, within the first 24 hours of having a reverse proxy setup (mind you without any actual data on the sites), there was a good amount of suspicous visits. Provided is an image of an overview of the last 30 days (where the site was empty); within the data, there were 470 malicous attacks stopped by Cloudflare in the last 30 days alone. 
+                <br><img src="home_server/poyo_security.png " class="blog-image" alt="Clourflare report of visits to the hosting domain"><br>
+                Compared to this site, despite the near 60% increase in visitors, there were only 57 blocked attackers. The only difference between the two is how they are hosted (this site is ran off GitHub pages), which suggests that reverse_proxy does infact make a site more targetable.
+                <br><img src="home_server/sparrowe_security.png " class="blog-image" alt="Clourflare report of visits to this site"><br>                
             </p>
         </section>
+
 
         <section class="outro">
-            <h4>Conclusion</h4>
+            <h4>Reflection</h4>
             <p>
-                After a painful week or so of setting things up and realising that it doesn't work (surely I'm not the issue), the final system is all ready. Final modifications would be to install a VPN (Tailscale) so that any future modifications can be done remotely.
-                Honestly, the entire journey was fun and educational. I'm glad I have decided to push myself out of my comfert zone to learn a new skill in an area I haven't dwelled in before.
+                Despite all of this effort, nothing that had been stated suggests that this project is impossible, it is just a lot of work. Work that does not pay off at all, with a system that keeps resetting over time or breaks down for no apparent reason. Setting up a home server is the easy part, keeping it running is not. Midway though one of the diagnostic steps I paused and thought, why? Why do all this work for a solution that doesn't solve any existing issue. With that, the home server saga ends.
             </p>
         </section>
+
     </div>
 
+            <!-- <section class="name"> -->
+            <!-- <h4>Title</h4> -->
+            <!-- <p> -->
+                <!-- Text -->
+            <!-- </p> -->
+        <!-- </section> -->
 
 
     <footer class="page-footer transparent ">
